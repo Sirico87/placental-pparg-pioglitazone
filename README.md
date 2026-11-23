@@ -36,20 +36,16 @@ placental-pparg-pioglitazone/
 ├── requirements.txt         # Required Python packages and dependencies
 ├── run_pipeline.py          # Master reproducible Python execution script
 ├── figures/                 # Pre-generated publication-ready figures (300 DPI)
-│   ├── Figure1_MultiOmic_Landscape_and_Targets.png
-│   ├── Figure2_Independent_RNAseq_Validation.png
-│   ├── Figure3_DeepLearning_and_ExplainableAI.png
-│   ├── Figure4_SingleCell_and_Mechanism.png
-│   ├── Figure5_SOD1_Promoter_PPRE.png
-│   ├── Figure6_Molecular_Docking_and_Pharmacogenomics.png
-│   ├── Figure7_Pharmacovigilance_and_Safety.png
-│   ├── Figure8_Spatial_Maternal_Fetal_Interface.png
-│   └── Figure9_NFKB_Regulon_and_Activity.png
-└── tables/                  # Generated clinical, sequencing, and statistical tables
-    ├── Table1_Cohort_Characteristics.csv
-    ├── Table2_Validation_Cohort_Characteristics.csv
-    ├── Table3_Global_Pharmacovigilance_Matrix.csv
-    └── Table4_Regression_Analysis.csv
+   ├── Figure1_MultiOmic_Landscape_and_Targets.png
+   ├── Figure2_Independent_RNAseq_Validation.png
+   ├── Figure3_DeepLearning_and_ExplainableAI.png
+   ├── Figure4_SingleCell_and_Mechanism.png
+   ├── Figure5_SOD1_Promoter_PPRE.png
+   ├── Figure6_Molecular_Docking_and_Pharmacogenomics.png
+   ├── Figure7_Pharmacovigilance_and_Safety.png
+   ├── Figure8_Spatial_Maternal_Fetal_Interface.png
+   └── Figure9_NFKB_Regulon_and_Activity.png
+
 🚀 Quick Start & Execution
 1. Clone Repository
 Bash
