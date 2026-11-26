@@ -1,0 +1,9 @@
+Cohort Parameter,Normal Controls (n = 34),Early-Onset Severe PE (n = 9),Total Validation Cohort (n = 43)
+Diagnostic Category,Uncomplicated Term Deliveries,"Early-Onset Severe PE (< 34w, ACOG)",Complete Validation Set
+Biological Specimen,Placental villous tissue,Placental villous tissue,Human Placental Tissue
+Sequencing Platform,Illumina HiSeq 2500 (GPL16791),Illumina HiSeq 2500 (GPL16791),Next-Generation RNA-Seq
+Library Strategy,Transcriptomic Total RNA (PolyA+),Transcriptomic Total RNA (PolyA+),RNA-Seq (Single-end reads)
+Quantified Transcripts,"57,992","57,992","57,992 mapped Ensembl IDs"
+"Sequencing Depth, Reads (Mean ± SD)","15,443,188 ± 3,597,058","17,991,838 ± 3,595,002","15,976,627 ± 3,705,203"
+"Mean Gestational Age at Delivery, weeks",38.8 ± 1.2,30.6 ± 2.1,—
+"Mean Infant Birthweight, grams","3,320 ± 380","1,350 ± 320",—

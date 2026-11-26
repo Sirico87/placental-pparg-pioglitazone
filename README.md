@@ -12,7 +12,7 @@ Official computational repository for the study:
 
 ## 📌 Study Overview
 
-Early-onset placental insufficiency—manifesting clinically as severe early preeclampsia (PE) and fetal growth restriction (FGR)—is an orphan obstetrical syndrome lacking disease-modifying pharmacological interventions. This project provides a fully automated, end-to-end computational pipeline integrating multi-omic discovery, orthogonal next-generation sequencing validation, single-cell/spatial transcriptomics, structural molecular docking, explainable deep learning, and real-world pharmacovigilance surveillance to evaluate the repurposing potential of the PPAR-γ agonist **Pioglitazone**.
+Early-onset placental insufficiency—manifesting clinically as severe early preeclampsia (PE) and fetal growth restriction (FGR)—is an orphan obstetrical syndrome (ORPHA:439167) lacking disease-modifying pharmacological interventions. This project provides a fully automated, end-to-end computational pipeline integrating multi-omic discovery, orthogonal next-generation sequencing validation, single-cell transcriptomics, structural molecular docking, explainable deep learning, and real-world pharmacovigilance surveillance to evaluate the repurposing potential of the PPAR-γ agonist **Pioglitazone**.
 
 ### Key Pipeline Components:
 1. **Whole-Transcriptome Microarray Discovery (GSE75010, n = 157):** Identification of a 654-gene signature (|log2FC| > 0.3, Benjamini-Hochberg FDR q < 0.05) comparing early-onset PE (<34 weeks, n = 49) with gestational-age-matched preterm controls (<37 weeks, n = 43).
@@ -20,9 +20,10 @@ Early-onset placental insufficiency—manifesting clinically as severe early pre
 3. **Perturbational Drug Repurposing Benchmarking (DSigDB / LINCS L1000):** Head-to-head comparison demonstrating superior reverse connectivity of PPAR-γ agonists over low-dose aspirin, sildenafil, and statins.
 4. **Orthogonal Next-Generation RNA-Seq Validation (GSE148241, n = 43):** Cross-platform validation of signature genes (*SOD1* downregulation, *FLT1*, *ENG*, and *PLIN2* upregulation).
 5. **Cross-Platform Deep Learning with Explainable AI:** A PyTorch multilayer perceptron trained on discovery data achieving an AUC of 0.87 in 5-fold cross-validation and an AUC of 0.95 in blind zero-shot testing on the independent RNA-seq cohort, evaluated through Permutation Feature Importance.
-6. **Single-Cell & 10x Visium Spatial Transcriptomics:** Mapping core regulon components across placental subpopulations, localizing maximal *PPARG* and *SOD1* expression to invasive extravillous trophoblasts (EVTs).
+6. **Single-Cell Trophoblastic Expression Mapping:** Mapping core regulon components across placental subpopulations from human single-cell references, localizing maximal *PPARG* and *SOD1* expression to invasive extravillous trophoblasts (EVTs).
 7. **Promoter Architecture & 3D Molecular Docking:** Identification of dual functional PPRE consensus motifs in the human *SOD1* promoter and stereochemical confirmation of Pioglitazone binding within the PPAR-γ catalytic pocket (PDB ID: 2XKW; ΔG = -9.4 kcal/mol).
-8. **Multi-Source Pharmacovigilance & Safety Surveillance:** Live API retrieval from FDA FAERS (>25 million reports), EudraVigilance/VigiAccess summaries, and published clinical teratology literature confirming the absence of structural embryopathy signals.
+8. **Placental NF-κB Interactome & Multivariate Logistic Regression:** Confirmation of the independent clinical predictive value of the placental inflammatory score adjusted for maternal BMI, parity, and gestational age.
+9. **Multi-Source Pharmacovigilance & Safety Surveillance:** Live API retrieval from FDA FAERS (>25 million reports), EudraVigilance/VigiAccess summaries, and published clinical teratology literature confirming the absence of structural embryopathy signals.
 
 ---
 
@@ -36,40 +37,32 @@ placental-pparg-pioglitazone/
 ├── requirements.txt         # Required Python packages and dependencies
 ├── run_pipeline.py          # Master reproducible Python execution script
 ├── figures/                 # Pre-generated publication-ready figures (300 DPI)
-   ├── Figure1_MultiOmic_Landscape_and_Targets.png
-   ├── Figure2_Independent_RNAseq_Validation.png
-   ├── Figure3_DeepLearning_and_ExplainableAI.png
-   ├── Figure4_SingleCell_and_Mechanism.png
-   ├── Figure5_SOD1_Promoter_PPRE.png
-   ├── Figure6_Molecular_Docking_and_Pharmacogenomics.png
-   ├── Figure7_Pharmacovigilance_and_Safety.png
-   ├── Figure8_Spatial_Maternal_Fetal_Interface.png
-   └── Figure9_NFKB_Regulon_and_Activity.png
+│   ├── Figure1_MultiOmic_Landscape_and_Targets.png
+│   ├── Figure2_Independent_RNAseq_Validation.png
+│   ├── Figure3_DeepLearning_and_ExplainableAI.png
+│   ├── Figure4_SingleCell_and_Mechanism.png
+│   ├── Figure5_SOD1_Promoter_PPRE.png
+│   ├── Figure6_Molecular_Docking_and_Pharmacogenomics.png
+│   ├── Figure7_Pharmacovigilance_and_Safety.png
+│   └── Figure8_NFKB_Regulon_and_Activity.png
+└── tables/                  # Generated clinical, sequencing, and statistical tables
+    ├── Table1_Cohort_Characteristics.csv
+    ├── Table2_Validation_Cohort_Characteristics.csv
+    ├── Table3_Global_Pharmacovigilance_Matrix.csv
+    └── Table4_Regression_Analysis.csv
 
 🚀 Quick Start & Execution
 1. Clone Repository
-Bash
-git clone https://github.com/angelosirico/placental-pparg-pioglitazone.git
+git clone https://github.com/Sirico87/placental-pparg-pioglitazone.git
 cd placental-pparg-pioglitazone
 2. Set Up Environment & Install Dependencies
-It is recommended to use a clean Python virtual environment (Python 3.10 or higher):
-Bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install --upgrade pip
 pip install -r requirements.txt
 3. Run the Automated Pipeline
-Execute the master script to reproduce all analytical steps, tables, and figures:
-Bash
 python run_pipeline.py
-Note: The script automatically downloads necessary public data files (GEO series and PDB crystallographic structures) into ./data/. Processing time is approximately 10–25 minutes depending on internet connection and hardware (NVIDIA GPU recommended for PyTorch training, but CPU execution is fully supported).
-📊 Public Data Sources Utilized
-Discovery Microarray: NCBI GEO GSE75010 (Platform: GPL6244 / Affymetrix Gene 1.0 ST)
-Validation RNA-Seq: NCBI GEO GSE148241 (Platform: GPL16791 / Illumina HiSeq 2500)
-Crystal Structure: RCSB Protein Data Bank PDB: 2XKW (PPAR-γ LBD in complex with Pioglitazone)
-Pharmacovigilance API: openFDA Drug Event Endpoint
 ✉️ Contact & Inquiries
-For technical questions or collaborative inquiries regarding the computational models, please contact:
 Angelo Sirico, MD, PhD
 Department of Woman, Child, and General and Specialized Surgery
 University of Campania "Luigi Vanvitelli", Naples, Italy

@@ -1,0 +1,7 @@
+Characteristic,Term Control (>=37w),Preterm Control (<37w),Late-Onset PE (>=34w),Early-Onset PE (<34w),P-value (Early PE vs Preterm Ctrl)
+"Sample Size, N",34,43,31,49,—
+"Gestational Age at Delivery, weeks",38.5 ± 1.1,30.4 ± 3.2,36.2 ± 1.3,29.9 ± 2.0,0.415 (Matched)
+"Maternal Age, years",34.2 ± 4.6,32.4 ± 5.8,33.8 ± 5.4,32.8 ± 6.2,0.817
+"Maternal BMI, kg/m²",24.6 ± 4.9,24.4 ± 4.9,24.2 ± 3.8,28.2 ± 6.2,0.002
+Newborn Birthweight Z-Score,-0.04 ± 1.13,-0.34 ± 1.24,-1.06 ± 0.83,-1.19 ± 0.79,4.35e-04 ***
+"Infant Sex, Male N (%)",18 (52.9%),24 (55.8%),18 (58.1%),23 (46.9%),0.522

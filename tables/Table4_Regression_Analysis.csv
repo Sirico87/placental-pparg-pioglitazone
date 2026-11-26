@@ -1,0 +1,6 @@
+Variable,Univariate OR,Univariate 95% CI,Univariate p-value,Multivariate OR,Multivariate 95% CI,Multivariate p-value
+Maternal Age (years),1.03,0.95 - 1.12,0.465,1.06,0.89 - 1.25,0.528
+Nulliparity,1.48,0.58 - 3.78,0.409,5.46,0.73 - 40.66,0.098
+Maternal BMI (kg/m²),1.15,1.04 - 1.28,0.009,1.14,0.98 - 1.34,0.099
+Gestational Age at Delivery,0.86,0.72 - 1.02,0.088,0.76,0.54 - 1.07,0.120
+Placental NF-κB Activation Score,79.56,10.81 - 585.45,<0.001,150.13,12.73 - 1771.09,<0.001
